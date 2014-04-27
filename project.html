@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Technovation</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#return-home').click(function() {
+            		window.location = "1.html";
+        		});
+			});
+		</script>
+
+		<div class="container">
+		<div class="row"><div id="proj-heading" class="col-md-12"><h4>Venting about people who misuse the word "literally"</h4></div></div>
+		<div class="results">
+			<div class="ui-body ui-body-a ui-corner-all box"><p class="icon ion-ios7-box"></p><span id="project_category">Geek out</span></div>
+			<div class="ui-body ui-body-a ui-corner-all box"><p class="icon ion-document-text"></p><span id="project_overview">Project Overview:<br>The word "figuratively" is used to indicate that a phrase is to be taken as a figure of speech, not literally. However, people have increasingly overused and misused the word "literally" to mean "figuratively," perverting the word's original meaning. Ever get annoyed when you hear people say things like, "That concert was so good I was literally dying"?  Come find me in Kafein and we'll vent about our frustrations with people who are "literally the worst."</span></div>
+			<div class="ui-body ui-body-a ui-corner-all box"><p class="icon ion-person-stalker"></p><span id="num_people">4 people needed</span></div>
+			<div class="ui-body ui-body-a ui-corner-all box last"><p class="icon ion-ios7-clock"></p><span id="countdown"></span><span id="notifier"></span><span id="time_hrs">2 hrs </span><span id="time_min"> 30 min</span></div>
+			<div class="row btn-row">
+				<div class="col-xs-6"><button class="btn btn-block btn-lg btn-primary"><a href="1.html" style="color: white">Home</a></button></div>
+				<div class="col-xs-6"><button class="btn btn-block btn-lg btn-primary" id="join">Join</button></div>
+			</div>
+			<script>
+				$("#join").on("click", function() {
+					alert("A request to join has been sent to the user!");
+				})
+			</script>
+		</div>
+		</div>
+	</body>
+</html>

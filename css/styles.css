@@ -1,0 +1,119 @@
+.container {
+	background-color: #2c3e50;
+	font-family: 'Lato', sans-serif;
+}
+
+.ui-page-theme-a .ui-btn.ui-btn-active, .ui-page-theme-a .ui-checkbox-on:after {
+	background-color: #1ABC9C !important;
+	border-color: #1ABC9C;
+	color: #fff;
+	text-shadow: 0 1px 0 #1ABC9C;
+}
+
+label {
+	color: #ffffff;
+	text-shadow: none;
+	font-size: 13px !important;
+}
+
+textarea {
+	font-size: 12px !important;
+}
+
+input {
+	font-size: 12px !important;
+}
+
+.widget-with-icon:after {
+      display: none;
+}
+
+span {
+	font-family: 'Lato', sans-serif !important;
+	font-size: 12px !important;
+}
+
+#select-choice-5-menu li a {
+	font-family: 'Lato', sans-serif !important;
+	font-size: 12px !important;
+}
+
+#proj-heading {
+	color: #ffffff;
+	background-color: #1ABC9C;
+	text-align: center;
+	padding-top: 1px;
+	padding-bottom: 2px;
+	text-shadow: none;
+}
+
+.ui-header .ui-title {
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.button-icon {
+	position: absolute;
+	padding: .7em 0em;
+	top: 50%;
+	margin-top: -28px;
+	font-size: 24px;
+}
+
+.ion-edit {
+	left: .5625em;
+}
+
+.ion-checkmark-circled {
+	right: .5625em;
+	padding-left: 100px !important;
+}
+
+.btn-primary {
+	background-color: #1ABC9C !important;
+	color: #ffffff !important;
+	border: none !important;
+	text-shadow: none !important;
+}
+
+.btn-primary:hover {
+	background-color: #1ABC9C !important;
+	opacity: 0.8 !important;
+}
+
+.btn-default {
+	background-color: #798795 !important;
+}
+
+.input-group-btn {
+	border: none !important;
+}
+
+.box {
+	background-color: #34495e;
+	color: #ffffff;
+	text-shadow: none;
+	border: none;
+	margin-top: 15px !important;
+}
+
+.last {
+	margin-bottom: 15px;
+}
+
+.icon {
+	padding-right: 15px;
+	font-size: 20px;
+}
+
+.results {
+	font-size: 12px;
+}
+
+.btn-row {
+	margin-bottom: 15px;
+}
+
+#return-home {
+	margin-bottom: 15px;
+}

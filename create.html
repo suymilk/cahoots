@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Technovation</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+		
+		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.touchspin.js"></script>
+		<script src="js/script.js"></script>
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+	<script type="text/javascript">
+			function startTimer()
+			{
+			  console.log("things are happening");
+			  userHourInput = document.getElementById('set-time-hrs').value;
+			  userMinInput = document.getElementById('set-time-min').value;
+			  if(userMinInput.length == 0 && userHourInput.length == 0) {
+				  alert("Please enter a time.");
+			  } 
+			  else {
+			  	 var numericExpression = /^[0-9]+$/;
+			     if (!userMinInput.match(numericExpression) || !userHourInput.match(numericExpression)) {
+			      alert("Please enter numerical values for hours and minutes.")
+			     }
+			     else {
+			      function display( notifier, str ) {
+			        return document.getElementById(notifier).innerHTML = str;
+			      }
+
+			      function leadingZero (x) {
+			        return (x < 10) ? "0" + x : + x;
+			      }
+
+			      function doConversions (x) {
+			        var hours = parseInt (x/3600) % 24;
+			        var minutes = parseInt (x/60) % 60;
+			        var seconds = Math.floor(x%60);
+			        return leadingZero(hours) + ":" + leadingZero(minutes) + ":" + leadingZero(seconds);
+			      }
+			    
+			      function setTimer(hremain, mremain) {
+			        sremain = hremain*3600 + mremain*60;
+			        (function countdown() {
+			           display("countdown", doConversions(sremain));
+			           (sremain -= 1) >= 0 && setTimeout(arguments.callee, 1000);
+			        })();
+			      }
+
+			      setTimer(userHourInput, userMinInput); 
+			    }  
+			  }
+			}
+		</script>
+		<div class="container">
+		<div class="row"><div id="proj-heading" class="col-md-12"><h4>New Project</h4></div></div>
+		<div data-role="main" class="ui-content project-form">
+			
+			<form>
+				<label for="project-title">Title: </label>
+				<input type="text" name="project-title" id="project-title" value="Testing a mobile app">
+				
+
+				<label for="select-choice-5" class="select">Category: </label>
+				<select name="select-choice-5" id="select-choice-5" multiple="multiple" data-native-menu="false">
+				    <option value="Homework" selected>Homework</option>
+				    <option value="Outdoors">Outdoors</option>
+				    <option value="Crafts">Crafts</option>
+				    <option value="Service">Service</option>
+				    <option value="Geek Out">Geek Out</option>
+				</select>
+				
+				<label for="overview">Overview, desired skills</label>
+				<textarea cols="40" rows="8" name="overview" id="overview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices leo cursus tempor aliquam. Mauris ac pulvinar nunc. Sed non mi magna. Fusce lorem arcu, interdum semper libero ut, varius pretium dolor. Fusce imperdiet rutrum elit sit amet mollis. Sed in ligula eget dui euismod tincidunt. Pellentesque a auctor velit. Curabitur sollicitudin non est sed gravida. Praesent velit nulla, consequat nec leo nec, fermentum condimentum est.</textarea>
+				
+				<label for="participants">Participants Wanted</label>
+				<input type="text" id="participants" name="participants" value="3">
+				
+				<label>Time for Project Completion</label>
+				<div class="row input-group-sm">
+					<div class="col-xs-12"><input type="text" id="set-time-hrs" name="set-time-hrs" value="1"></div>
+				</div>
+				<div class="row input-group-sm">
+					<div class="col-xs-12"><input type="text" id="set-time-min" name="set-time-min" value="5"></div>
+				</div>
+				
+				<button type="submit" id="submit-form" class="btn btn-block btn-lg btn-primary">Submit</button>
+			</form>
+		
+		</div>
+		<div class="results">
+			<div class="ui-body ui-body-a ui-corner-all box"><p class="icon ion-ios7-box"></p><span id="project_category"></span></div>
+			<div class="ui-body ui-body-a ui-corner-all box"><p class="icon ion-document-text"></p><span id="project_overview"></span></div>
+			<div class="ui-body ui-body-a ui-corner-all box"><p class="icon ion-person-stalker"></p><span id="num_people"></span></div>
+			<div class="ui-body ui-body-a ui-corner-all box last"><p class="icon ion-ios7-clock"></p><span id="countdown"></span><span id="notifier"></span><span id="time_hrs"></span><span id="time_min"></span></div>
+			<div class="row btn-row">
+				<div class="col-xs-6"><button class="btn btn-block btn-lg btn-primary" id="edit-project">Edit</button></div>
+				<div class="col-xs-6"><button class="btn btn-block btn-lg btn-primary" id="submit-project" onclick="startTimer()"><div id="countdown"></div><div id="notifier"></div>Submit</button></div>
+			</div>
+			<button type="submit" id="return-home" class="btn btn-block btn-lg btn-primary">Home</button>
+		</div>
+		</div>
+	</body>
+</html>
